@@ -1,0 +1,31 @@
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .mobileView {
+    display: block !important;
+  }
+}
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .tabView {
+    display: block !important;
+  }
+}
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .LaptopView {
+    display: block !important;
+  }
+}
+.mobileView {
+  display: none;
+}
+.tabView {
+  display: none;
+}
+.LaptopView {
+  display: none;
+}
