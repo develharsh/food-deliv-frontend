@@ -18,26 +18,31 @@ const Signup = () => {
       },
     ],
   });
+  const [show, setShow] = useState("block");
   const { name, email, phoneNum1, password } = values;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
   const handleSubmit = (e) => {
+    setShow("none");
     e.preventDefault();
     console.log(values);
     axios
       .post(`${BASE_URL}auth/signup`, values)
       .then(function (response) {
-        console.log(response.data);
+        setShow("block");
+
+        window.alert("Signup Successful.");
       })
       .catch(function (error) {
-        console.log(error.response.data);
+        setShow("block");
+        window.alert(error.response.data.message);
       });
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ display: show }}>
         <input
           type="text"
           name="name"
