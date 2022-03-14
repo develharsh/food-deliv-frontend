@@ -7,7 +7,7 @@ import {
   // Navigate,
 } from "react-router-dom";
 import Home from "./components/Home/Home";
-// import Signup from "./components/Client/Signup";
+import Signup from "./components/Client/Signup";
 // import Login from "./components/Client/Login";
 // import Post from "./components/Client/Post/Post";
 // import { loadUser } from "./actions/userActions";
@@ -33,8 +33,8 @@ function App() {
       <Notify /> */}
       <Routes>
         <Route exact path="/" element={<Home />} />
-        {/* <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<Signup />} />
+        {/* <Route exact path="/login" element={<Login />} />
         <Route
           exact
           path="/create/post"
