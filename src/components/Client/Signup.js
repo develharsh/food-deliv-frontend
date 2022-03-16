@@ -6,7 +6,7 @@ const Signup = () => {
   const [values, setValues] = useState({
     name: "",
     email: "",
-    phoneNum1: "",
+    phone: "",
     password: "",
     addresses: [
       {
@@ -19,7 +19,7 @@ const Signup = () => {
     ],
   });
   const [show, setShow] = useState("block");
-  const { name, email, phoneNum1, password } = values;
+  const { name, email, phone, password } = values;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -59,8 +59,8 @@ const Signup = () => {
         />
         <input
           type="text"
-          name="phoneNum1"
-          value={phoneNum1}
+          name="phone"
+          value={phone}
           onChange={handleChange}
           placeholder="Enter your Phone"
         />
