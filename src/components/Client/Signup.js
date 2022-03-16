@@ -29,7 +29,7 @@ const Signup = () => {
     e.preventDefault();
     console.log(values);
     axios
-      .post(`${BASE_URL}auth/signup`, values)
+      .post(`${BASE_URL}client/signup`, values)
       .then(function (response) {
         setShow("block");
 
