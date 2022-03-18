@@ -1,0 +1,175 @@
+:root {
+  --accent-color: #5dd8a7;
+  --accent-dark-color: #3d375e;
+  --dark-color: #0e0b23;
+  --light-color: #cbc8e1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--accent-dark-color);
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+body {
+  height: 100vh;
+
+  font-family: system-ui;
+  color: var(--light-color);
+  line-height: 1.75;
+
+  background-color: var(--dark-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  &__inner {
+    width: min(100% - 2rem, 60rem);
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-content: center;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  a {
+    display: inline-flex;
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--light-color);
+
+    background-color: transparent;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &.is-active {
+      color: var(--dark-color);
+      background-color: var(--light-color);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+
+  > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:first-child {
+      transform: rotate(0);
+      transition: transform 0.2s ease-in-out;
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:nth-child(2) {
+      &:hover {
+        animation: ring 0.7s ease-in-out;
+        transform-origin: 50% 2px;
+      }
+    }
+  }
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+
+  overflow: hidden;
+  border-radius: 40px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.main {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
+
+  figure {
+    position: relative;
+
+    img {
+      border-radius: 10px;
+    }
+  }
+
+  figcaption {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+    font-weight: bold;
+
+    background-color: rgba(#0e0b23, 0.4);
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(2deg);
+  }
+  35% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}

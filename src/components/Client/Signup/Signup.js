@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../../../config";
+import { BASE_URL } from "../../../utils/config";
 
 const Signup = () => {
   const [values, setValues] = useState({
@@ -20,6 +20,7 @@ const Signup = () => {
     axios
       .post(`${BASE_URL}client/signup`, values)
       .then(function (response) {
+        console.log(response)
         window.alert("Signup Successful.");
       })
       .catch(function (error) {
