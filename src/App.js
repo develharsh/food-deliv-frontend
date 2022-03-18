@@ -7,7 +7,7 @@ import {
   // Navigate,
 } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Signup from "./components/Client/Signup";
+import Signup from "./components/Client/Signup/Signup";
 // import Login from "./components/Client/Login";
 // import Post from "./components/Client/Post/Post";
 // import { loadUser } from "./actions/userActions";
