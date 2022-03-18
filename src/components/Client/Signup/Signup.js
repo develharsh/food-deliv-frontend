@@ -8,41 +8,27 @@ const Signup = () => {
     email: "",
     phone: "",
     password: "",
-    addresses: [
-      {
-        streetAddress: "H.no 1486 sushant lok phase I Block C",
-        landMark: "Near Queens Plaza",
-        pincode: "202020",
-        city: "Gurgaon",
-        state: "Uttar Pradesh",
-      },
-    ],
   });
-  const [show, setShow] = useState("block");
   const { name, email, phone, password } = values;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
   const handleSubmit = (e) => {
-    setShow("none");
     e.preventDefault();
     console.log(values);
     axios
       .post(`${BASE_URL}client/signup`, values)
       .then(function (response) {
-        setShow("block");
-
         window.alert("Signup Successful.");
       })
       .catch(function (error) {
-        setShow("block");
         window.alert(error.response.data.message);
       });
   };
   return (
     <div>
-      <form onSubmit={handleSubmit} style={{ display: show }}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
